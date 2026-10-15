@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Қысқаша көбейту формулалары - AI Differentiator</title>
+    <title>Short Multiplication Formulas - AI Differentiator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>AI Математикалық Дифференциатор</h1>
-            <p>Тақырып: Қысқаша көбейту формулалары</p>
+            <h1>AI Math Differentiator</h1>
+            <p>Topic: Short Multiplication Formulas</p>
         </header>
 
         <div class="level-selector">
-            <button class="level-btn active" onclick="setLevel(1)">1-деңгей: Foundation</button>
-            <button class="level-btn" onclick="setLevel(2)">2-деңгей: Standard</button>
-            <button class="level-btn" onclick="setLevel(3)">3-деңгей: Advanced</button>
+            <button class="level-btn active" onclick="setLevel(1)">Level 1: Foundation</button>
+            <button class="level-btn" onclick="setLevel(2)">Level 2: Standard</button>
+            <button class="level-btn" onclick="setLevel(3)">Level 3: Advanced</button>
         </div>
 
         <div class="task-card">
-            <h2 id="task-title">1-деңгей: Негізгі ұғым және жеңілдетілген есеп</h2>
-            <p id="task-description">Мұнда есептің шарты қарапайым тілде түсіндіріліп, қадамдық нұсқаулық беріледі.</p>
-            <div class="math-box" id="task-math">Есеп: $(x + 3)^2$ өрнегін ашып жазыңыз.</div>
+            <h2 id="task-title">Level 1: Foundation (Simplified)</h2>
+            <p id="task-description">A simple example to understand the formula. Reminder: $(a+b)^2 = a^2 + 2ab + b^2$.</p>
+            <div class="math-box" id="task-math">Problem: Expand the expression $(x + 3)^2$.</div>
             
             <div class="input-section">
-                <input type="text" id="user-answer" placeholder="Жауабыңызды жазыңыз (мысалы: x^2+6x+9)">
-                <button onclick="checkAnswer()">Тексеру</button>
-                <button class="ai-btn" onclick="getAIHint()">🤖 ЖІ Көмегі</button>
+                <input type="text" id="user-answer" placeholder="Enter your answer (e.g., x^2+6x+9)">
+                <button onclick="checkAnswer()">Check</button>
+                <button class="ai-btn" onclick="getAIHint()">🤖 AI Hint</button>
             </div>
 
             <div id="feedback" class="feedback-box"></div>
