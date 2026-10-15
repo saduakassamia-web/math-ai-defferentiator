@@ -2,25 +2,25 @@ let currentLevel = 1;
 
 const levelsData = {
     1: {
-        title: "1-деңгей: Foundation (Жеңілдетілген)",
-        desc: "Формуланы түсінуге арналған қарапайым мысал. Еске түсіру: $(a+b)^2 = a^2 + 2ab + b^2$.",
-        math: "(x + 3)^2 өрнегін ашып жазыңыз.",
+        title: "Level 1: Foundation (Simplified)",
+        desc: "A simple example to understand the formula. Reminder: $(a+b)^2 = a^2 + 2ab + b^2$.",
+        math: "Expand the expression $(x + 3)^2$.",
         answer: "x^2+6x+9",
-        hint: "Қадамдық көмек: Бірінші мүшенің квадраты ($x^2$), үстем екі еселенген көбейтінді ($2 \\cdot x \\cdot 3 = 6x$) және екінші мүшенің квадраты ($3^2 = 9$)."
+        hint: "Step-by-step hint: First term squared ($x^2$), double product ($2 \\cdot x \\cdot 3 = 6x$), and second term squared ($3^2 = 9$)."
     },
     2: {
-        title: "2-деңгей: Standard (Мектеп бағдарламасы)",
-        desc: "Орташа күрделіліктегі стандартты есеп шығару деңгейі[cite: 1].",
-        math: "(2x - 5)(2x + 5) - (x - 2)^2 өрнегін ықшамдаңыз.",
+        title: "Level 2: Standard (Curriculum Level)",
+        desc: "Standard grade-level problem solving for expression simplification[cite: 1].",
+        math: "Simplify the expression $(2x - 5)(2x + 5) - (x - 2)^2$.",
         answer: "3x^2+4x-21",
-        hint: "Көмек: Алдымен квадраты айырмасы формуласын ($(a-b)(a+b)=a^2-b^2$) қолданыңыз, содан соң екінші жақшаны ашыңыз."
+        hint: "Hint: First apply the difference of squares formula ($(a-b)(a+b)=a^2-b^2$), then expand the second parenthesis."
     },
     3: {
-        title: "3-деңгей: Advanced (Күрделі / Логикалық)",
-        desc: "Көп сатылы логикалық есеп және тереңдетілген тапсырма[cite: 1].",
-        math: "Егер x + 1/x = 5 болса, x^2 + 1/x^2 неге тең?",
+        title: "Level 3: Advanced (Logic Challenge)",
+        desc: "Multi-step logic challenge connecting algebraic identities[cite: 1].",
+        math: "If $x + 1/x = 5$, what is the value of $x^2 + 1/x^2$?",
         answer: "23",
-        hint: "Көмек: Берілген теңдіктің екі жағын да квадраттаңыз: $(x + 1/x)^2 = 5^2$."
+        hint: "Hint: Square both sides of the given equation: $(x + 1/x)^2 = 5^2$."
     }
 };
 
@@ -36,7 +36,7 @@ function setLevel(level) {
 
     document.getElementById('task-title').innerText = levelsData[level].title;
     document.getElementById('task-description').innerText = levelsData[level].desc;
-    document.getElementById('task-math').innerText = "Есеп: " + levelsData[level].math;
+    document.getElementById('task-math').innerText = "Problem: " + levelsData[level].math;
     document.getElementById('user-answer').value = '';
     document.getElementById('feedback').innerText = '';
     document.getElementById('feedback').style.background = 'transparent';
@@ -50,11 +50,11 @@ function checkAnswer() {
     if (userAns === correctAns) {
         feedback.style.background = '#d4edda';
         feedback.style.color = '#155724';
-        feedback.innerText = 'Дұрыс! Тамаша жұмыс!';
+        feedback.innerText = 'Correct! Great job!';
     } else {
         feedback.style.background = '#f8d7da';
         feedback.style.color = '#721c24';
-        feedback.innerText = 'Қате. ЖІ көмегін (AI Көмегі) қолданып көріңіз.';
+        feedback.innerText = 'Incorrect. Try using the AI Hint.';
     }
 }
 
@@ -62,5 +62,5 @@ function getAIHint() {
     const feedback = document.getElementById('feedback');
     feedback.style.background = '#cce5ff';
     feedback.style.color = '#004085';
-    feedback.innerText = `🤖 Жасанды интеллект кеңесі: ${levelsData[currentLevel].hint}`;
+    feedback.innerText = `🤖 AI Hint: ${levelsData[currentLevel].hint}`;
 }
